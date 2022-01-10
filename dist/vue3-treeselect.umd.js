@@ -6866,27 +6866,28 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
 
 
 /* harmony default export */ var SingleValuevue_type_script_lang_js = ({
-  name: 'vue-treeselect--single-value',
-  inject: ['instance'],
+  name: "vue-treeselect--single-value",
+  inject: ["instance"],
   methods: {
     renderSingleValueLabel: function renderSingleValueLabel() {
       var instance = this.instance;
       var node = instance.selectedNodes[0];
-      var customValueLabelRenderer = instance.$slots['value-label'];
+      var customValueLabelRenderer = instance.$slots["value-label"];
       return customValueLabelRenderer ? customValueLabelRenderer({
         node: node
       }) : node.label;
     }
   },
   render: function render() {
-    var instance = this.instance,
-        renderValueContainer = this.$parent.renderValueContainer;
+    var instance = this.instance;
     var shouldShowValue = instance.hasValue && !instance.trigger.searchQuery;
-    return renderValueContainer([shouldShowValue && Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+    return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+      "class": "vue-treeselect__value-container"
+    }, [[shouldShowValue && Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
       "class": "vue-treeselect__single-value"
     }, [this.renderSingleValueLabel()]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Placeholder, null, null), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Input, {
       "ref": "input"
-    }, null)]);
+    }, null)]]);
   }
 });
 // CONCATENATED MODULE: ./src/components/SingleValue.vue
@@ -7005,15 +7006,9 @@ Deletevue_type_script_lang_js.render = Deletevue_type_template_id_12b4a02e_rende
   render: function render() {
     var _this = this;
 
-    var renderValueContainer = this.$parent.renderValueContainer; // const transitionGroupProps = {
-    //   props: {
-    //     tag: 'div',
-    //     name: 'vue-treeselect__multi-value-item--transition',
-    //     appear: true,
-    //   },
-    // }
-
-    return renderValueContainer(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["TransitionGroup"], {
+    return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+      "class": "vue-treeselect__value-container"
+    }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["TransitionGroup"], {
       "class": "vue-treeselect__multi-value",
       "tag": "div",
       "name": "vue-treeselect__multi-value-item--transition",
@@ -7027,7 +7022,7 @@ Deletevue_type_script_lang_js.render = Deletevue_type_template_id_12b4a02e_rende
           "key": "input"
         }, null)];
       }
-    }));
+    })]);
   }
 });
 // CONCATENATED MODULE: ./src/components/MultiValue.vue
@@ -7069,8 +7064,8 @@ Arrowvue_type_script_lang_js.render = Arrowvue_type_template_id_5d5151cb_render
 
 
 /* harmony default export */ var Controlvue_type_script_lang_js = ({
-  name: 'vue-treeselect--control',
-  inject: ['instance'],
+  name: "vue-treeselect--control",
+  inject: ["instance"],
   computed: {
     /* eslint-disable valid-jsdoc */
 
@@ -7124,8 +7119,8 @@ Arrowvue_type_script_lang_js.render = Arrowvue_type_template_id_5d5151cb_render
     renderArrow: function renderArrow() {
       var instance = this.instance;
       var arrowClass = {
-        'vue-treeselect__control-arrow': true,
-        'vue-treeselect__control-arrow--rotated': instance.menu.isOpen
+        "vue-treeselect__control-arrow": true,
+        "vue-treeselect__control-arrow--rotated": instance.menu.isOpen
       };
       if (!this.shouldShowArrow) return null;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
@@ -7173,13 +7168,7 @@ Arrowvue_type_script_lang_js.render = Arrowvue_type_template_id_5d5151cb_render
 
       instance.focusInput();
       instance.toggleMenu();
-    }),
-    // This is meant to be called by child `<Value />` component.
-    renderValueContainer: function renderValueContainer(children) {
-      return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
-        "class": "vue-treeselect__value-container"
-      }, [children]);
-    }
+    })
   },
   render: function render() {
     var instance = this.instance;
@@ -7389,7 +7378,7 @@ function setupResizeAndScrollEventListeners($el, listener) {
 
 
 /* harmony default export */ var Tipvue_type_script_lang_js = (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["defineComponent"])({
-  name: 'vue-treeselect--tip',
+  name: "vue-treeselect--tip",
   functional: true,
   props: {
     type: {
@@ -7401,7 +7390,7 @@ function setupResizeAndScrollEventListeners($el, listener) {
       required: true
     }
   },
-  render: function render(context) {
+  render: function render() {
     var type = this.type,
         icon = this.icon;
     return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
@@ -7995,17 +7984,17 @@ var directionMap = {
 
 
 var PortalTarget = {
-  name: 'vue-treeselect--portal-target',
-  inject: ['instance'],
+  name: "vue-treeselect--portal-target",
+  inject: ["instance"],
   watch: {
-    'instance.menu.isOpen': function instanceMenuIsOpen(newValue) {
+    "instance.menu.isOpen": function instanceMenuIsOpen(newValue) {
       if (newValue) {
         this.setupHandlers();
       } else {
         this.removeHandlers();
       }
     },
-    'instance.menu.placement': function instanceMenuPlacement() {
+    "instance.menu.placement": function instanceMenuPlacement() {
       this.updateMenuContainerOffset();
     }
   },
@@ -8067,7 +8056,7 @@ var PortalTarget = {
       var $portalTarget = this.$el;
       var $control = instance.getControl();
       var controlRect = $control.getBoundingClientRect();
-      $portalTarget.style.width = controlRect.width + 'px';
+      $portalTarget.style.width = controlRect.width + "px";
     },
     updateMenuContainerOffset: function updateMenuContainerOffset() {
       var instance = this.instance;
@@ -8075,11 +8064,11 @@ var PortalTarget = {
       var $portalTarget = this.$el;
       var controlRect = $control.getBoundingClientRect();
       var portalTargetRect = $portalTarget.getBoundingClientRect();
-      var offsetY = instance.menu.placement === 'bottom' ? controlRect.height : 0;
-      var left = Math.round(controlRect.left - portalTargetRect.left) + 'px';
-      var top = Math.round(controlRect.top - portalTargetRect.top + offsetY) + 'px';
-      var menuContainerStyle = this.$refs.menu.$refs['menu-container'].style;
-      var transformVariations = ['transform', 'webkitTransform', 'MozTransform', 'msTransform'];
+      var offsetY = instance.menu.placement === "bottom" ? controlRect.height : 0;
+      var left = Math.round(controlRect.left - portalTargetRect.left) + "px";
+      var top = Math.round(controlRect.top - portalTargetRect.top + offsetY) + "px";
+      var menuContainerStyle = this.$refs.menu.$refs["menu-container"].style;
+      var transformVariations = ["transform", "webkitTransform", "MozTransform", "msTransform"];
       var transform = find(transformVariations, function (t) {
         return t in document.body.style;
       }); // IE9 doesn't support `translate3d()`.
@@ -8089,7 +8078,7 @@ var PortalTarget = {
   },
   render: function render() {
     var instance = this.instance;
-    var portalTargetClass = ['vue-treeselect__portal-target', instance.wrapperClass];
+    var portalTargetClass = ["vue-treeselect__portal-target", instance.wrapperClass];
     var portalTargetStyle = {
       zIndex: instance.zIndex
     };
@@ -8107,7 +8096,7 @@ var PortalTarget = {
 };
 var placeholder;
 /* harmony default export */ var MenuPortalvue_type_script_lang_js = ({
-  name: 'vue-treeselect--menu-portal',
+  name: "vue-treeselect--menu-portal",
   created: function created() {
     this.portalTarget = null;
   },
@@ -8119,7 +8108,7 @@ var placeholder;
   },
   methods: {
     setup: function setup() {
-      var el = document.createElement('div');
+      var el = document.createElement("div");
       document.body.appendChild(el);
       this.portalTarget = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createApp"])(_objectSpread2({
         parent: this
@@ -8132,7 +8121,7 @@ var placeholder;
     },
     teardown: function teardown() {
       document.body.removeChild(this.portalTarget.$el);
-      this.portalTarget.$el.innerHTML = '';
+      this.portalTarget.$el.innerHTML = "";
       this.portalTarget.$destroy();
       this.portalTarget = null;
     }

@@ -40,27 +40,20 @@ export default {
   },
 
   render() {
-    const { renderValueContainer } = this.$parent;
-    // const transitionGroupProps = {
-    //   props: {
-    //     tag: 'div',
-    //     name: 'vue-treeselect__multi-value-item--transition',
-    //     appear: true,
-    //   },
-    // }
-
-    return renderValueContainer(
-      <TransitionGroup
-        class="vue-treeselect__multi-value"
-        tag="div"
-        name="vue-treeselect__multi-value-item--transition"
-        appear={true}
-      >
-        {this.renderMultiValueItems()}
-        {this.renderExceedLimitTip()}
-        <Placeholder key="placeholder" />
-        <Input ref="input" key="input" />
-      </TransitionGroup>
+    return (
+      <div class="vue-treeselect__value-container">
+        <TransitionGroup
+          class="vue-treeselect__multi-value"
+          tag="div"
+          name="vue-treeselect__multi-value-item--transition"
+          appear={true}
+        >
+          {this.renderMultiValueItems()}
+          {this.renderExceedLimitTip()}
+          <Placeholder key="placeholder" />
+          <Input ref="input" key="input" />
+        </TransitionGroup>
+      </div>
     );
   },
 };

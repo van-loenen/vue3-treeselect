@@ -1,7 +1,8 @@
 
 
 module.exports = {
-    css: { 
+    css: {
         extract: true
-   }
+   },
+   publicPath:'./'
 };

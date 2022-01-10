@@ -6,7 +6,7 @@
   "unpkg": "dist/vue3-treeselect.umd.js",
   "author": "megafetis",
   "scripts": {
-    "build": "vue-cli-service build --target lib --name vue3-treeselect ./src/index.js && webpack --env.production",
+    "build": "vue-cli-service build --target lib --name vue3-treeselect ./src/index.js && vue-cli-service build --dest docs --mode development ./demo/index.js",
     "serve": "vue-cli-service serve"
   },
   "devDependencies": {
