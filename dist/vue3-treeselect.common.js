@@ -4094,9 +4094,9 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Treeselect.vue?vue&type=template&id=4fa337e8
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Treeselect.vue?vue&type=template&id=ae3fa246
 
-function Treeselectvue_type_template_id_4fa337e8_render(_ctx, _cache, $props, $setup, $data, $options) {
+function Treeselectvue_type_template_id_ae3fa246_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_HiddenFields = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("HiddenFields");
 
   var _component_Control = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Control");
@@ -6967,9 +6967,10 @@ Deletevue_type_script_lang_js.render = Deletevue_type_template_id_12b4a02e_rende
 
 
 
+
 /* harmony default export */ var MultiValuevue_type_script_lang_js = ({
-  name: 'vue-treeselect--multi-value',
-  inject: ['instance'],
+  name: "vue-treeselect--multi-value",
+  inject: ["instance"],
   methods: {
     renderMultiValueItems: function renderMultiValueItems() {
       var instance = this.instance;
@@ -7003,7 +7004,7 @@ Deletevue_type_script_lang_js.render = Deletevue_type_template_id_12b4a02e_rende
     //   },
     // }
 
-    return renderValueContainer(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("transition-group"), {
+    return renderValueContainer(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["TransitionGroup"], {
       "class": "vue-treeselect__multi-value",
       "tag": "div",
       "name": "vue-treeselect__multi-value-item--transition",
@@ -7421,14 +7422,15 @@ function setupResizeAndScrollEventListeners($el, listener) {
 
 
 
+
 function _isSlot(s) {
   return typeof s === 'function' || Object.prototype.toString.call(s) === '[object Object]' && !Object(external_commonjs_vue_commonjs2_vue_root_Vue_["isVNode"])(s);
 }
 
 var arrowPlaceholder, checkMark, minusMark;
 var Option = {
-  name: 'vue-treeselect--option',
-  inject: ['instance'],
+  name: "vue-treeselect--option",
+  inject: ["instance"],
   props: {
     node: {
       type: Object,
@@ -7452,12 +7454,12 @@ var Option = {
       var instance = this.instance,
           node = this.node;
       var optionClass = {
-        'vue-treeselect__option': true,
-        'vue-treeselect__option--disabled': node.isDisabled,
-        'vue-treeselect__option--selected': instance.isSelected(node),
-        'vue-treeselect__option--highlight': node.isHighlighted,
-        'vue-treeselect__option--matched': instance.localSearch.active && node.isMatched,
-        'vue-treeselect__option--hide': !this.shouldShow
+        "vue-treeselect__option": true,
+        "vue-treeselect__option--disabled": node.isDisabled,
+        "vue-treeselect__option--selected": instance.isSelected(node),
+        "vue-treeselect__option--highlight": node.isHighlighted,
+        "vue-treeselect__option--matched": instance.localSearch.active && node.isMatched,
+        "vue-treeselect__option--hide": !this.shouldShow
       };
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
         "class": optionClass,
@@ -7478,13 +7480,13 @@ var Option = {
 
       if (node.isBranch) {
         var arrowClass = {
-          'vue-treeselect__option-arrow': true,
-          'vue-treeselect__option-arrow--rotated': this.shouldExpand
+          "vue-treeselect__option-arrow": true,
+          "vue-treeselect__option-arrow--rotated": this.shouldExpand
         };
         return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
           "class": "vue-treeselect__option-arrow-container",
           "onMousedown": this.handleMouseDownOnArrow
-        }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("transition"), {
+        }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
           "name": "vue-treeselect__option-arrow--prepare",
           "appear": true
         }, {
@@ -7530,11 +7532,11 @@ var Option = {
           node = this.node;
       var checkedState = instance.forest.checkedStateMap[node.id];
       var checkboxClass = {
-        'vue-treeselect__checkbox': true,
-        'vue-treeselect__checkbox--checked': checkedState === CHECKED,
-        'vue-treeselect__checkbox--indeterminate': checkedState === INDETERMINATE,
-        'vue-treeselect__checkbox--unchecked': checkedState === UNCHECKED,
-        'vue-treeselect__checkbox--disabled': node.isDisabled
+        "vue-treeselect__checkbox": true,
+        "vue-treeselect__checkbox--checked": checkedState === CHECKED,
+        "vue-treeselect__checkbox--indeterminate": checkedState === INDETERMINATE,
+        "vue-treeselect__checkbox--unchecked": checkedState === UNCHECKED,
+        "vue-treeselect__checkbox--disabled": node.isDisabled
       };
       if (!checkMark) checkMark = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", {
         "class": "vue-treeselect__check-mark"
@@ -7551,9 +7553,9 @@ var Option = {
           node = this.node;
       var shouldShowCount = node.isBranch && (instance.localSearch.active ? instance.showCountOnSearchComputed : instance.showCount);
       var count = shouldShowCount ? instance.localSearch.active ? instance.localSearch.countMap[node.id][instance.showCountOf] : node.count[instance.showCountOf] : NaN;
-      var labelClassName = 'vue-treeselect__label';
-      var countClassName = 'vue-treeselect__count';
-      var customLabelRenderer = instance.$slots['option-label'];
+      var labelClassName = "vue-treeselect__label";
+      var countClassName = "vue-treeselect__count";
+      var customLabelRenderer = instance.$slots["option-label"];
       if (customLabelRenderer) return customLabelRenderer({
         node: node,
         shouldShowCount: shouldShowCount,
@@ -7658,18 +7660,18 @@ var Option = {
     var indentLevel = this.instance.shouldFlattenOptions ? 0 : node.level;
 
     var listItemClass = _defineProperty({
-      'vue-treeselect__list-item': true
+      "vue-treeselect__list-item": true
     }, "vue-treeselect__indent-level-".concat(indentLevel), true);
 
     return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
       "class": listItemClass
-    }, [this.renderOption(), node.isBranch ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("transition"), {
+    }, [this.renderOption(), node.isBranch ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
       "name": "vue-treeselect__list--transition"
     }, _isSlot(_slot = this.renderSubOptionsList()) ? _slot : {
       default: function _default() {
         return [_slot];
       }
-    }) : '']);
+    }) : ""]);
   }
 }; // eslint-disable-next-line vue/require-direct-export
 
@@ -7689,24 +7691,25 @@ var Option = {
 
 
 
+
 function Menuvue_type_script_lang_js_isSlot(s) {
   return typeof s === 'function' || Object.prototype.toString.call(s) === '[object Object]' && !Object(external_commonjs_vue_commonjs2_vue_root_Vue_["isVNode"])(s);
 }
 
 var directionMap = {
-  top: 'top',
-  bottom: 'bottom',
-  above: 'top',
-  below: 'bottom'
+  top: "top",
+  bottom: "bottom",
+  above: "top",
+  below: "bottom"
 };
 /* harmony default export */ var Menuvue_type_script_lang_js = ({
-  name: 'vue-treeselect--menu',
-  inject: ['instance'],
+  name: "vue-treeselect--menu",
+  inject: ["instance"],
   computed: {
     menuStyle: function menuStyle() {
       var instance = this.instance;
       return {
-        maxHeight: instance.maxHeight + 'px'
+        maxHeight: instance.maxHeight + "px"
       };
     },
     menuContainerStyle: function menuContainerStyle() {
@@ -7717,7 +7720,7 @@ var directionMap = {
     }
   },
   watch: {
-    'instance.menu.isOpen': function instanceMenuIsOpen(newValue) {
+    "instance.menu.isOpen": function instanceMenuIsOpen(newValue) {
       if (newValue) {
         // In case `openMenu()` is just called and the menu is not rendered yet.
         this.$nextTick(this.onMenuOpen);
@@ -7750,12 +7753,12 @@ var directionMap = {
     },
     renderBeforeList: function renderBeforeList() {
       var instance = this.instance;
-      var beforeListRenderer = instance.$slots['before-list'];
+      var beforeListRenderer = instance.$slots["before-list"];
       return beforeListRenderer ? beforeListRenderer() : null;
     },
     renderAfterList: function renderAfterList() {
       var instance = this.instance;
-      var afterListRenderer = instance.$slots['after-list'];
+      var afterListRenderer = instance.$slots["after-list"];
       return afterListRenderer ? afterListRenderer() : null;
     },
     renderNormalMenuInner: function renderNormalMenuInner() {
@@ -7789,7 +7792,7 @@ var directionMap = {
     renderAsyncSearchMenuInner: function renderAsyncSearchMenuInner() {
       var instance = this.instance;
       var entry = instance.getRemoteSearchEntry();
-      var shouldShowSearchPromptTip = instance.trigger.searchQuery === '' && !instance.defaultOptions;
+      var shouldShowSearchPromptTip = instance.trigger.searchQuery === "" && !instance.defaultOptions;
       var shouldShowNoResultsTip = shouldShowSearchPromptTip ? false : entry.isLoaded && entry.options.length === 0;
 
       if (shouldShowSearchPromptTip) {
@@ -7917,12 +7920,12 @@ var directionMap = {
 
       if (!isControlInViewport) {
         instance.closeMenu();
-      } else if (instance.openDirection !== 'auto') {
+      } else if (instance.openDirection !== "auto") {
         instance.menu.placement = directionMap[instance.openDirection];
       } else if (hasEnoughSpaceBelow || !hasEnoughSpaceAbove) {
-        instance.menu.placement = 'bottom';
+        instance.menu.placement = "bottom";
       } else {
-        instance.menu.placement = 'top';
+        instance.menu.placement = "top";
       }
     },
     setupMenuSizeWatcher: function setupMenuSizeWatcher() {
@@ -7961,7 +7964,7 @@ var directionMap = {
       "ref": "menu-container",
       "class": "vue-treeselect__menu-container",
       "style": this.menuContainerStyle
-    }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("transition"), {
+    }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
       "name": "vue-treeselect__menu--transition"
     }, Menuvue_type_script_lang_js_isSlot(_slot = this.renderMenu()) ? _slot : {
       default: function _default() {
@@ -8145,7 +8148,7 @@ var placeholder;
 
 
 /* harmony default export */ var Treeselectvue_type_script_lang_js = (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["defineComponent"])({
-  name: 'vue-treeselect',
+  name: "vue-treeselect",
   mixins: [treeselectMixin],
   components: {
     HiddenFields: HiddenFields,
@@ -8156,36 +8159,27 @@ var placeholder;
   computed: {
     wrapperClass: function wrapperClass() {
       return {
-        'vue-treeselect': true,
-        'vue-treeselect--single': this.single,
-        'vue-treeselect--multi': this.multiple,
-        'vue-treeselect--searchable': this.searchable,
-        'vue-treeselect--disabled': this.disabled,
-        'vue-treeselect--focused': this.trigger.isFocused,
-        'vue-treeselect--has-value': this.hasValue,
-        'vue-treeselect--open': this.menu.isOpen,
-        'vue-treeselect--open-above': this.menu.placement === 'top',
-        'vue-treeselect--open-below': this.menu.placement === 'bottom',
-        'vue-treeselect--branch-nodes-disabled': this.disableBranchNodes,
-        'vue-treeselect--append-to-body': this.appendToBody
+        "vue-treeselect": true,
+        "vue-treeselect--single": this.single,
+        "vue-treeselect--multi": this.multiple,
+        "vue-treeselect--searchable": this.searchable,
+        "vue-treeselect--disabled": this.disabled,
+        "vue-treeselect--focused": this.trigger.isFocused,
+        "vue-treeselect--has-value": this.hasValue,
+        "vue-treeselect--open": this.menu.isOpen,
+        "vue-treeselect--open-above": this.menu.placement === "top",
+        "vue-treeselect--open-below": this.menu.placement === "bottom",
+        "vue-treeselect--branch-nodes-disabled": this.disableBranchNodes,
+        "vue-treeselect--append-to-body": this.appendToBody
       };
     }
-  } // render() {
-  //   return (
-  //     <div ref="wrapper" class={this.wrapperClass}>
-  //       <HiddenFields />
-  //       <Control ref="control" />
-  //       {this.appendToBody ? <MenuPortal ref="portal" /> : <Menu ref="menu" />}
-  //     </div>
-  //   )
-  // },
-
+  }
 }));
 // CONCATENATED MODULE: ./src/components/Treeselect.vue
 
 
 
-Treeselectvue_type_script_lang_js.render = Treeselectvue_type_template_id_4fa337e8_render
+Treeselectvue_type_script_lang_js.render = Treeselectvue_type_template_id_ae3fa246_render
 
 /* harmony default export */ var Treeselect = (Treeselectvue_type_script_lang_js);
 // EXTERNAL MODULE: ./styles/style.less
