@@ -1,5 +1,5 @@
 {
-  "name": "vue3-treeselect",
+  "name": "@elricco/vue3-treeselect",
   "version": "0.1.2",
   "description": "Tree select hierarchical component for vue 3 (next)",
   "main": "dist/vue3-treeselect.common.js",
@@ -7,7 +7,8 @@
   "author": "megafetis",
   "scripts": {
     "build": "vue-cli-service build --target lib --name vue3-treeselect ./src/index.js && vue-cli-service build --dest docs --mode development ./demo/index.js",
-    "serve": "vue-cli-service serve"
+    "serve": "vue-cli-service serve",
+    "test": "echo \"No test specified\""
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -86,7 +87,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/megafetis/vue3-treeselect.git"
+    "url": "git+https://github.com/elricco/vue3-treeselect.git"
   },
   "dependencies": {}
 }
