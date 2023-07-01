@@ -6343,8 +6343,6 @@ var instanceId = 0;
           if (!descendant.isDisabled || _this21.allowSelectingDisabledDescendants) {
             if (_this21.nodeSelectOnlyLeaves) {
               if (descendant.isLeaf && descendant.parentNode === node) {
-                console.log('descendant', descendant);
-
                 _this21.addValue(descendant);
               }
             } else {
