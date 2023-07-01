@@ -73,6 +73,14 @@ export default {
     /**
      * Whether to allow resetting value even if there are disabled selected nodes.
      */
+    nodeSelectOnlyLeaves: {
+      type: Boolean,
+      default: false,
+    },
+
+    /**
+     * Whether to allow resetting value even if there are disabled selected nodes.
+     */
     allowClearingDisabled: {
       type: Boolean,
       default: false,
@@ -1594,12 +1602,12 @@ export default {
             //   isLoaded,
             // })
             normalized.childrenStates = {...createAsyncOptionsStates(),isLoaded}
-            
+
             // this.$ set(normalized, 'isExpanded', typeof isDefaultExpanded === 'boolean'
             //   ? isDefaultExpanded
             //   : level < this.defaultExpandLevel)
             normalized.isExpanded = typeof isDefaultExpanded === 'boolean' ? isDefaultExpanded : level < this.defaultExpandLevel;
-            
+
             // this.$ set(normalized, 'hasMatchedDescendants', false)
             // this.$ set(normalized, 'hasDisabledDescendants', false)
             // this.$ set(normalized, 'isExpandedOnSearch', false)
@@ -1877,21 +1885,29 @@ export default {
         return
       }
 
-      const isFullyChecked = (
-        node.isLeaf ||
-        (/* node.isBranch && */!node.hasDisabledDescendants) ||
-        (/* node.isBranch && */this.allowSelectingDisabledDescendants)
-      )
-      if (isFullyChecked) {
-        this.addValue(node)
-      }
-
       if (node.isBranch) {
         this.traverseDescendantsBFS(node, descendant => {
           if (!descendant.isDisabled || this.allowSelectingDisabledDescendants) {
-            this.addValue(descendant)
+            if (this.nodeSelectOnlyLeaves) {
+              if (descendant.isLeaf && descendant.parentNode === node) {
+                this.addValue(descendant)
+              }
+            } else {
+              this.addValue(descendant)
+            }
           }
         })
+      }
+
+      const isFullyChecked = (
+        node.isLeaf
+        || (this.nodeSelectOnlyLeaves
+          ? node.children.every(this.isSelected)
+          : (!node.hasDisabledDescendants || this.allowSelectingDisabledDescendants))
+      )
+
+      if (isFullyChecked) {
+        this.addValue(node)
       }
 
       if (isFullyChecked) {

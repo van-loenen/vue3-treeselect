@@ -4,5 +4,6 @@ module.exports = {
     css: {
         extract: true
    },
-   publicPath:'./'
+   publicPath:'./',
+   parallel: false
 };

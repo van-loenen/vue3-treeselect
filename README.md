@@ -1,3 +1,5 @@
+Added `nodeSelectOnlyLeaves` property to let select only leaves when node is selected.
+
 # vue3-treeselect
 [![npm](https://badgen.now.sh/npm/v/vue3-treeselect)](https://www.npmjs.com/package/vue3-treeselect)  [![Coverage](https://badgen.net/codecov/c/github/megafetis/vue3-treeselect)](https://codecov.io/gh/megafetis/vue3-treeselect?branch=main)
 ![npm monthly downloads](https://badgen.now.sh/npm/dm/megafetis/vue3-treeselect)
